@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { PixelData } from './sprite';
+    import type { PixelData } from '$lib/sprite';
 
     let { pixelData }: { pixelData: PixelData } = $props();
 </script>

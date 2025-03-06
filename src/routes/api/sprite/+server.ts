@@ -1,13 +1,28 @@
 import type { Sprite } from '$lib/sprite';
-import { error, type RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 
 // FIXME: Voor nu hebben we hier even een placeholder voor de sprites,
 //        totdat we een database hebben die we kunnen gebruiken
 //        om de sprites op te halen.
 const sprites: Sprite[] = [
     {
+        id: 1,
+        name: 'Pikachu',
+        // prettier-ignore
+        pixels: [
+          false, true,  true,  false, false, false, false, true,
+          false, true,  true,  true,  false, false, false, true,
+          false, false, false, true,  true,  true,  true,  true,
+          true,  true,  false, true,  true,  true,  true,  true,
+          true,  true,  false, true,  true,  true,  true,  true,
+          false, true,  false, true,  true,  true,  true,  false,
+          false, true,  true,  true,  true,  true,  true,  false,
+          false, false, true,  true,  true,  true,  true,  false
+      ]
+    },
+    {
         id: 0,
-        name: 'Creeper?! Ahhhw mannnn',
+        name: 'Creeper?! Ahhhw mmmmmmmaaaaaannnnnnnnnnnn',
         // prettier-ignore
         pixels: [
             true, true , true,  true,  true,  true,  true,  true,
@@ -19,32 +34,9 @@ const sprites: Sprite[] = [
             true, true , false, false, false, false, true,  true,
             true, true , false, true,  true,  false, true,  true
         ]
-    },
-    {
-        id: 1,
-        name: 'Pikachu',
-        // prettier-ignore
-        pixels: [
-            false, true,  true,  false, false, false, false, true,
-            false, true,  true,  true,  false, false, false, true,
-            false, false, false, true,  true,  true,  true,  true,
-            true,  true,  false, true,  true,  true,  true,  true,
-            true,  true,  false, true,  true,  true,  true,  true,
-            false, true,  false, true,  true,  true,  true,  false,
-            false, true,  true,  true,  true,  true,  true,  false,
-            false, false, true,  true,  true,  true,  true,  false
-        ]
     }
 ];
 
 export const GET: RequestHandler = () => {
-
-
-
-
-    if (!sprites) {
-        error(404, 'No Sprites found');
-    }
-
     return new Response(JSON.stringify(sprites));
 };

@@ -4,7 +4,7 @@
     let { children } = $props();
 </script>
 
-<header class="border-b bg-gray-100 px-8 py-4">
+<header class="border-b bg-secondary px-8 py-4">
     <h1 class="text-2xl font-bold">
         <a href="/" class="no-underline hover:underline">Runner</a>
     </h1>
