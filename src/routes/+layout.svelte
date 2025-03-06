@@ -9,7 +9,19 @@
         <a href="/" class="no-underline hover:underline">Runner</a>
     </h1>
 </header>
-<main class="mx-auto my-8 max-w-5xl">
+
+<main class="mx-auto my-8 w-full max-w-5xl px-4">
     {@render children()}
 </main>
-<footer></footer>
+
+<footer class="border-t bg-gray-100 px-8 py-4">
+    <p>&copy; 2025 Team Runner</p>
+</footer>
+
+<style>
+    :global(body) {
+        display: grid;
+        height: 100vh;
+        grid-template-rows: auto 1fr auto;
+    }
+</style>
