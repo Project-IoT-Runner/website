@@ -1,5 +1,7 @@
 export interface Sprite {
     id: number;
     name: string;
-    pixels: boolean[][];
+    pixels: PixelData;
 }
+
+export type PixelData = boolean[];
