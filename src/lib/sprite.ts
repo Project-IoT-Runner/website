@@ -1,7 +1,5 @@
-export interface Sprite {
-    id: number;
-    name: string;
-    pixels: PixelData;
-}
+import type { Tables } from './database.types';
 
-export type PixelData = boolean[];
+export type Sprite = Tables<'sprites'>;
+
+export type PixelData = Sprite['pixels'];

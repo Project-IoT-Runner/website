@@ -19,6 +19,17 @@ Om het project te starten
 pnpm run dev -- --open
 ```
 
+### Project development
+
+#### Database types genereren
+
+Om de typescript types te genereren voor de database kun je het volgende command
+gebruiken:
+
+```bash
+pnpm run gen-types
+```
+
 ### Project prod-builden
 
 TODO
