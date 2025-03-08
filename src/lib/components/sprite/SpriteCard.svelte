@@ -3,9 +3,10 @@
     import * as Card from '$lib/components/ui/card';
     import type { Sprite } from '$lib/sprite';
     import SpritePreview from './SpritePreview.svelte';
-
+    import { Button } from "$lib/components/ui/button/index.js";
     export let sprite: Sprite | null = null;
 </script>
+
 
 <Card.Root class="min-w-64">
     <Card.Header>
@@ -26,4 +27,9 @@
             {/if}
         </div>
     </Card.Content>
+    <Card.Footer >
+        <Button class="mr-4 no-underline" variant="secondary" href="/sprite/{sprite.id}">View</Button>
+        <Button class="no-underline" variant="secondary" href="/sprite/{sprite.id}/edit" >Update</Button>
+
+    </Card.Footer>
 </Card.Root>
