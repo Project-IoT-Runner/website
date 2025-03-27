@@ -14,7 +14,7 @@
     {@render children()}
 </main>
 
-<footer class="border-t bg-gray-100 px-8 py-4">
+<footer class="border-t bg-secondary px-8 py-4">
     <p>&copy; 2025 Team Runner</p>
 </footer>
 
