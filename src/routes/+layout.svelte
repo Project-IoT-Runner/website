@@ -1,7 +1,18 @@
 <script lang="ts">
+    import { Button } from '$lib/components/ui/button';
     import '../app.css';
 
     let { children } = $props();
+
+    function toggleColorMode() {
+        if (localStorage.theme == 'light') {
+            localStorage.theme = 'dark';
+            document.documentElement.classList.toggle('dark', true);
+        } else {
+            localStorage.theme = 'light';
+            document.documentElement.classList.toggle('dark', false);
+        }
+    }
 </script>
 
 <header class="border-b bg-secondary px-8 py-4">
@@ -16,6 +27,10 @@
 
 <footer class="border-t bg-secondary px-8 py-4">
     <p>&copy; 2025 Team Runner</p>
+
+    <Button class="p-0" variant="link" onclick={() => toggleColorMode()}>
+        Dark Mode
+    </Button>
 </footer>
 
 <style>
@@ -23,5 +38,11 @@
         display: grid;
         height: 100vh;
         grid-template-rows: auto 1fr auto;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 </style>
