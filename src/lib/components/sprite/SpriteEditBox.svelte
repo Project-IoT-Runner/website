@@ -32,7 +32,7 @@
             {#each pixelData as pixel, ix (ix)}
                 <div
                     class:bg-primary={pixel}
-                    class="h-full w-full"
+                    class="h-full w-full cursor-pointer hover:opacity-90"
                     onclick={() => togglePixel(ix)}
                 ></div>
             {/each}
