@@ -15,9 +15,11 @@
     }
 </script>
 
-<header class="border-b bg-secondary px-8 py-4">
+<header class="border-b bg-secondary px-8 py-4" style="background: var(--blue)">
     <h1 class="text-2xl font-bold">
-        <a href="/" class="no-underline hover:underline">Runner</a>
+        <a href="/" class="no-underline hover:underline" style="color: white"
+            >Runner</a
+        >
     </h1>
 </header>
 

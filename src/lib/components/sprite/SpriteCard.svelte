@@ -30,11 +30,13 @@
         <Button
             class="mr-4 no-underline"
             variant="secondary"
+            style="background: var(--blue); color: white;"
             href="/sprite/{sprite.id}">View</Button
         >
         <Button
             class="no-underline"
             variant="secondary"
+            style="background: var(--blue); color: white;"
             href="/sprite/{sprite.id}/edit">Update</Button
         >
     </Card.Footer>
