@@ -14,8 +14,8 @@
         );
     };
 
-    const CreateSprite = async () => {
-        await fetch('/api/sprite/create', {
+    const createSprite = async () => {
+        await fetch('/api/sprite', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +48,7 @@
         />
     </Card.Content>
     <Card.Footer>
-        <Button class="mr-4" onclick={() => CreateSprite()}>Opslaan</Button>
+        <Button class="mr-4" onclick={() => createSprite()}>Opslaan</Button>
         <Button variant="secondary" href="/">Annuleren</Button>
     </Card.Footer>
 </Card.Root>

@@ -10,7 +10,7 @@
 <div class="mb-4 flex justify-between">
     <h1 class="text-3xl font-bold">Kies een sprite!</h1>
 
-    <Button href="/sprite/create">Nieuwe sprite</Button>
+    <Button href="/sprite/add">Nieuwe sprite</Button>
 </div>
 
 <SpriteGrid {sprites} />
