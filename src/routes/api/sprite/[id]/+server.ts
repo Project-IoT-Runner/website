@@ -53,3 +53,30 @@ export const PUT: RequestHandler = async ({
 
     return new Response(JSON.stringify(updatedSprite));
 };
+
+export const DELETE: RequestHandler = async ({
+    params,
+    locals: { supabase }
+}) => {
+    if (!params.id) {
+        error(400, 'Missing id parameter');
+    }
+
+    const id = parseInt(params.id);
+
+    if (isNaN(id)) {
+        error(400, 'Invalid id parameter');
+    }
+
+    const { data: deletedSprite, error: spriteLoadError } = await supabase
+        .from('sprites')
+        .delete()
+        .eq('id', id)
+        .single();
+
+    if (spriteLoadError) {
+        throw error(404, 'Sprite not found');
+    }
+
+    return new Response(JSON.stringify(deletedSprite));
+};

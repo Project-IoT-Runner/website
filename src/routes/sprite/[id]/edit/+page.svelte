@@ -9,11 +9,8 @@
     let sprite = $state(data.sprite);
 
     const updateSprite = async () => {
-        await fetch('/api/sprite/' + sprite.id, {
+        await fetch(`/api/sprite/${sprite.id}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: JSON.stringify(sprite)
         });
 
@@ -22,7 +19,11 @@
 
     const deleteSprite = async () => {
         if (confirm('Sprite verwijderen?')) {
-            alert('TODO: verwijderen');
+            await fetch(`/api/sprite/${sprite.id}`, {
+                method: 'DELETE'
+            });
+
+            goto('/');
         }
     };
 </script>
