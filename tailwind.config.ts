@@ -15,11 +15,6 @@ const config: Config = {
         },
         extend: {
             colors: {
-                border: 'hsl(var(--border) / <alpha-value>)',
-                input: 'hsl(var(--input) / <alpha-value>)',
-                ring: 'hsl(var(--ring) / <alpha-value>)',
-                background: 'hsl(var(--background) / <alpha-value>)',
-                foreground: 'hsl(var(--foreground) / <alpha-value>)',
                 primary: {
                     DEFAULT: 'hsl(var(--primary) / <alpha-value>)',
                     foreground: 'hsl(var(--primary-foreground) / <alpha-value>)'
@@ -29,6 +24,14 @@ const config: Config = {
                     foreground:
                         'hsl(var(--secondary-foreground) / <alpha-value>)'
                 },
+                highlight: {
+                    orange: 'rgb(254, 125, 0)'
+                },
+                border: 'hsl(var(--border) / <alpha-value>)',
+                input: 'hsl(var(--input) / <alpha-value>)',
+                ring: 'hsl(var(--ring) / <alpha-value>)',
+                background: 'hsl(var(--background) / <alpha-value>)',
+                foreground: 'hsl(var(--foreground) / <alpha-value>)',
                 destructive: {
                     DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
                     foreground:
@@ -41,6 +44,11 @@ const config: Config = {
                 accent: {
                     DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
                     foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
+                },
+                bkz: {
+                    lightblue: 'rgb(238, 247, 251)',
+                    lightorange: 'rgb(254, 242, 228)',
+                    darkblue: 'rgb(-1, 49, 131)'
                 },
                 popover: {
                     DEFAULT: 'hsl(var(--popover) / <alpha-value>)',

@@ -28,15 +28,13 @@
     </Card.Content>
     <Card.Footer>
         <Button
-            class="mr-4 no-underline"
+            class="bg-bkz-darkblue mr-4 text-white no-underline"
             variant="secondary"
-            style="background: var(--blue); color: white;"
             href="/sprite/{sprite.id}">View</Button
         >
         <Button
-            class="no-underline"
+            class="bg-bkz-darkblue text-white no-underline"
             variant="secondary"
-            style="background: var(--blue); color: white;"
             href="/sprite/{sprite.id}/edit">Update</Button
         >
     </Card.Footer>

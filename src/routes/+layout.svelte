@@ -15,13 +15,16 @@
     }
 </script>
 
-<header class="border-b bg-secondary px-8 py-4 flex justify-between" style="background: var(--blue)">
+<header
+    class="bg-bkz-darkblue flex items-center justify-between border-b px-8 py-4"
+>
     <h1 class="text-2xl font-bold">
-        <a href="/" class="no-underline hover:underline" style="color: white"
-            >Runner</a
-        >
+        <a href="/" class="text-white no-underline hover:underline">Runner</a>
     </h1>
-    <a href="/sprite/create" class="no-underline bg-white text-stone-900 p-2 rounded-sm">
+    <a
+        href="/sprite/create"
+        class="rounded-sm bg-white p-2 text-stone-900 no-underline"
+    >
         New sprite
     </a>
 </header>
