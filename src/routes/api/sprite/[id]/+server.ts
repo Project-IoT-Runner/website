@@ -24,7 +24,11 @@ export const GET: RequestHandler = async ({ params, locals: { supabase } }) => {
     return new Response(JSON.stringify(sprite));
 };
 
-export const POST: RequestHandler = async ({ params, request, locals: { supabase } }) => {
+export const PUT: RequestHandler = async ({
+    params,
+    request,
+    locals: { supabase }
+}) => {
     if (!params.id) {
         error(400, 'Missing id parameter');
     }
@@ -34,21 +38,18 @@ export const POST: RequestHandler = async ({ params, request, locals: { supabase
     if (isNaN(id)) {
         error(400, 'Invalid id parameter');
     }
-    const { pixels } = await request.json(); 
 
-    if (!pixels) {
-        throw error(400, 'Missing pixels data in request body'); 
-    }
+    const sprite = await request.json();
 
-    const { data: sprite, error: spriteLoadError } = await supabase
+    const { data: updatedSprite, error: spriteLoadError } = await supabase
         .from('sprites')
-        .update({ pixels: pixels }) 
+        .update(sprite)
         .eq('id', id)
         .single();
 
     if (spriteLoadError) {
-        throw error(404, 'Sprite not found'); 
+        throw error(404, 'Sprite not found');
     }
 
-    return new Response(JSON.stringify(sprite));
+    return new Response(JSON.stringify(updatedSprite));
 };
