@@ -19,6 +19,12 @@
 
         goto('/');
     };
+
+    const deleteSprite = async () => {
+        if (confirm('Sprite verwijderen?')) {
+            alert('TODO: verwijderen');
+        }
+    };
 </script>
 
 <div class="flex h-full w-full flex-col items-center gap-8">
@@ -28,8 +34,14 @@
         <SpriteEditor bind:pixelData={sprite.pixels} />
         <Input placeholder="Sprite naam" type="text" bind:value={sprite.name} />
         <div class="footer flex justify-between">
-            <Button type="submit">Opslaan</Button>
-            <Button variant="destructive" href="/">Annuleren</Button>
+            <div class="flex gap-4">
+                <Button type="submit">Opslaan</Button>
+                <Button variant="destructive" onclick={() => deleteSprite()}>
+                    Verwijder
+                </Button>
+            </div>
+
+            <Button class="w-fit" variant="link" href="/">Annuleer</Button>
         </div>
     </form>
 </div>
