@@ -4,10 +4,11 @@
     import Button from '../ui/button/button.svelte';
     import { goto } from '$app/navigation';
 
-    let { pixelData, sprite }: { pixelData: PixelData; sprite: Sprite } = $props();
+    let { pixelData, sprite }: { pixelData: PixelData; sprite: Sprite } =
+        $props();
     let name = $state('name');
     const togglePixel = (index: number) => {
-        console.log(sprite)
+        console.log(sprite);
         pixelData = pixelData.map((pixel, ix) =>
             ix === index ? !pixel : pixel
         );
@@ -19,15 +20,14 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 name: name,
-                pixels: pixelData 
+                pixels: pixelData
             })
         });
 
         goto('/');
     };
-
 </script>
 
 <Card.Root class="min-w-64">
@@ -41,12 +41,14 @@
                 ></div>
             {/each}
         </div>
-        <input type="text" bind:value={name} class="bg-transparent border w-full"/>
+        <input
+            type="text"
+            bind:value={name}
+            class="w-full border bg-transparent"
+        />
     </Card.Content>
     <Card.Footer>
-        
-        <Button class="mr-4" variant="secondary" onclick={() => CreateSprite()}>Created</Button>
-        <Button class="no-underline" variant="secondary" href="/">cancel</Button>
-
+        <Button class="mr-4" onclick={() => CreateSprite()}>Opslaan</Button>
+        <Button variant="secondary" href="/">Annuleren</Button>
     </Card.Footer>
 </Card.Root>

@@ -30,7 +30,7 @@
 <footer class="border-t bg-secondary px-8 py-4">
     <p>&copy; 2025 Team Runner</p>
 
-    <Button class="p-0" variant="link" onclick={() => toggleColorMode()}>
+    <Button variant="ghost-secondary" onclick={() => toggleColorMode()}>
         Dark Mode
     </Button>
 </footer>

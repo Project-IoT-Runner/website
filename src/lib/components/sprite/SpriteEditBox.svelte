@@ -39,11 +39,7 @@
         </div>
     </Card.Content>
     <Card.Footer>
-        <Button class="mr-4" variant="secondary" onclick={() => updateSprite()}>
-            Update
-        </Button>
-        <Button class="no-underline" variant="secondary" href="/">
-            Cancel
-        </Button>
+        <Button class="mr-4" onclick={() => updateSprite()}>Opslaan</Button>
+        <Button variant="secondary" href="/">Annuleren</Button>
     </Card.Footer>
 </Card.Root>

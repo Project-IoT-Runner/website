@@ -9,9 +9,13 @@
 
 <Card.Root class="min-w-64">
     <Card.Header>
-        <div class="h-[2lh]">
+        <div class="h-[1lh]">
             {#if sprite}
-                <Card.Title>{sprite.name}</Card.Title>
+                <Card.Title
+                    class="overflow-hidden text-ellipsis whitespace-nowrap"
+                >
+                    {sprite.name}
+                </Card.Title>
             {:else}
                 <Skeleton class="h-8 w-full" />
             {/if}
@@ -26,16 +30,8 @@
             {/if}
         </div>
     </Card.Content>
-    <Card.Footer>
-        <Button
-            class="bg-bkz-darkblue mr-4 text-white no-underline"
-            variant="secondary"
-            href="/sprite/{sprite.id}">View</Button
-        >
-        <Button
-            class="bg-bkz-darkblue text-white no-underline"
-            variant="secondary"
-            href="/sprite/{sprite.id}/edit">Update</Button
-        >
+    <Card.Footer class="flex gap-4">
+        <Button variant="link" href="/sprite/{sprite.id}">Bekijk</Button>
+        <Button variant="link" href="/sprite/{sprite.id}/edit">Bewerk</Button>
     </Card.Footer>
 </Card.Root>
