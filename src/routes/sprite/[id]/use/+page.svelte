@@ -19,7 +19,21 @@
     }
 </script>
 
-<h1>{sprite.name}</h1>
-<SpritePreview pixelData={sprite.pixels} />
-<Input placeholder="Runner nummer" type="number" bind:value={deviceId}></Input>
-<Button onclick={() => useSprite()}>Gebruik</Button>
+<div class="flex w-full justify-center">
+    <div class="flex w-96 flex-col gap-8">
+        <h1 class="text-3xl font-bold">Gebruik Sprite ({sprite.name})</h1>
+
+        <div class="overflow-hidden rounded border">
+            <SpritePreview pixelData={sprite.pixels} />
+        </div>
+
+        <div class="flex gap-4">
+            <Input
+                placeholder="Runner nummer"
+                type="number"
+                bind:value={deviceId}
+            />
+            <Button onclick={() => useSprite()}>Gebruik</Button>
+        </div>
+    </div>
+</div>
