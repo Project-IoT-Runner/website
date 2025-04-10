@@ -21,12 +21,6 @@
     <h1 class="text-2xl font-bold">
         <a href="/" class="text-white no-underline hover:underline">Runner</a>
     </h1>
-    <a
-        href="/sprite/create"
-        class="rounded-sm bg-white p-2 text-stone-900 no-underline"
-    >
-        New sprite
-    </a>
 </header>
 
 <main class="mx-auto my-8 w-full max-w-5xl px-4">
