@@ -4,9 +4,13 @@
     import type { PageData } from './$types';
 
     let { data } = $props();
-    let { sprites }: PageData = data;
+    let { sprites, score }: PageData = data;
+    
+
 </script>
 
+
+<h1 class="text-3xl font-bold mb-12">Gezamelijke Score: <span class="text-emerald-500">{score[0]["score"]}!</span></h1>
 <div class="mb-4 flex justify-between">
     <h1 class="text-3xl font-bold">Kies een sprite!</h1>
 
