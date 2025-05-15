@@ -9,13 +9,17 @@
 
     let deviceId = $state();
 
-    function useSprite() {
+    async function useSprite() {
         if (!deviceId) {
             alert('Vul een goed runner nummber in!');
             return;
         }
 
-        alert('TODO: sprite available maken');
+        await fetch(`/api/device/${deviceId}/set-sprite/${sprite.id}`, {
+            method: 'POST'
+        }).catch((e) => console.error('Failed to set selected sprite: ' + e));
+
+        alert('Sprite wordt verstuurd!');
     }
 </script>
 

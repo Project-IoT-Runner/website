@@ -6,6 +6,8 @@
     import type { Sprite } from '$lib/sprite';
 
     let sprite: Sprite = {
+        id: 0,
+        name: 'Nieuwe Sprite',
         pixels: new Array(64).fill(false)
     };
 
