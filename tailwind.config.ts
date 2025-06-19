@@ -53,7 +53,8 @@ const config: Config = {
                 bkz: {
                     lightblue: 'rgb(238, 247, 251)',
                     lightorange: 'rgb(254, 242, 228)',
-                    darkblue: 'rgb(-1, 49, 131)'
+                    darkblue: 'rgb(-1, 49, 131)',
+                    highlight: 'rgb(255, 125, 0)'
                 }
             },
             borderRadius: {

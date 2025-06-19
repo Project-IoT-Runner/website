@@ -31,7 +31,9 @@
         </div>
     </Card.Content>
     <Card.Footer class="flex gap-4">
-        <Button variant="link" href="/sprite/{sprite.id}">Bekijk</Button>
-        <Button variant="link" href="/sprite/{sprite.id}/edit">Bewerk</Button>
+        {#if sprite}
+            <Button variant="link" href="/sprite/{sprite.id}">Bekijk</Button>
+            <Button variant="link" href="/sprite/{sprite.id}/edit">Bewerk</Button>
+        {/if}
     </Card.Footer>
 </Card.Root>

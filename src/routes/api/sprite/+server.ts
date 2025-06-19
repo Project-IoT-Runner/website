@@ -1,27 +1,23 @@
+import type { Sprite } from '$lib/sprite';
+import { sprites } from '$lib/store';
 import { error, type RequestHandler } from '@sveltejs/kit';
+import { get } from 'svelte/store';
 
-export const GET: RequestHandler = async ({ locals: { supabase } }) => {
-    const { data: sprites } = await supabase.from('sprites').select('*');
-    return new Response(JSON.stringify(sprites));
+export const GET: RequestHandler = async () => {
+    return new Response(JSON.stringify(get(sprites)));
 };
 
-export const POST: RequestHandler = async ({
-    request,
-    locals: { supabase }
-}) => {
-    const { pixels, name } = await request.json();
+export const POST: RequestHandler = async ({ request }) => {
+    const sprite: Sprite = await request.json();
 
-    if (!pixels) {
+    if (!sprite.pixels) {
         throw error(400, 'Missing pixels data in request body');
     }
 
-    const { data: sprite, error: spriteLoadError } = await supabase
-        .from('sprites')
-        .insert({ pixels: pixels, name: name });
-
-    if (spriteLoadError) {
-        throw error(404, 'Sprite not found');
-    }
+    sprites.update((sprites) => {
+      sprites.push(sprite);
+      return sprites;
+    })
 
     return new Response(JSON.stringify(sprite));
 };

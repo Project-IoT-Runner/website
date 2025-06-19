@@ -11,7 +11,7 @@
 
     async function useSprite() {
         if (!deviceId) {
-            alert('Vul een goed runner nummber in!');
+            alert('Vul een goed apparaat nummer in!');
             return;
         }
 
@@ -33,7 +33,7 @@
 
         <div class="flex gap-4">
             <Input
-                placeholder="Runner nummer"
+                placeholder="Apparaat nummer"
                 type="number"
                 bind:value={deviceId}
             />

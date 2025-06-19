@@ -19,7 +19,7 @@
     class="bg-bkz-darkblue flex items-center justify-between border-b px-8 py-4"
 >
     <h1 class="text-2xl font-bold">
-        <a href="/" class="text-white no-underline hover:underline">Runner</a>
+        <a href="/" class="text-white no-underline hover:underline">Vitrix</a>
     </h1>
 </header>
 
@@ -28,7 +28,7 @@
 </main>
 
 <footer class="border-t bg-secondary px-8 py-4">
-    <p>&copy; 2025 Team Runner</p>
+    <p>&copy; 2025 Team Vitrix</p>
 
     <Button variant="ghost-secondary" onclick={() => toggleColorMode()}>
         Dark Mode

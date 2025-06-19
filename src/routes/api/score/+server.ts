@@ -1,14 +1,13 @@
+import { score } from '$lib/store';
 import { error, type RequestHandler } from '@sveltejs/kit';
+import { get } from 'svelte/store';
 
-export const GET: RequestHandler = async ({ locals: { supabase } }) => {
-    const { data: score } = await supabase.from('score').select('*').limit(1);
-    return new Response(JSON.stringify(score));
+export const GET: RequestHandler = async () => {
+    const scoreValue = get(score);
+    return new Response(JSON.stringify(scoreValue));
 };
-export const PUT: RequestHandler = async ({
-    params,
-    request,
-    locals: { supabase }
-}) => {
+
+export const PUT: RequestHandler = async ({ params, request }) => {
     if (!params.device_id) {
         error(400, 'Missing id parameter');
     }
@@ -19,17 +18,12 @@ export const PUT: RequestHandler = async ({
         error(400, 'Invalid id parameter');
     }
 
-    const score = await request.json();
+    const scoreValue = await request.json();
 
-    const { data: updatedScore, error: spriteLoadError } = await supabase
-        .from('score')
-        .update(score)
-        .eq('device_id', device_id)
-        .single();
+  score.update(score => {
+    score = scoreValue;
+    return score;
+  });
 
-    if (spriteLoadError) {
-        throw error(404, 'Sprite not found');
-    }
-
-    return new Response(JSON.stringify(updatedScore));
+    return new Response(JSON.stringify(scoreValue));
 };

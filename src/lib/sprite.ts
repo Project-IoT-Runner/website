@@ -1,7 +1,12 @@
-import type { Tables } from './database.types';
+export type Sprite = {
+    id: number;
+    name: string;
+    pixels: boolean[];
+};
 
-export type Sprite = Tables<'sprites'>;
-
-export type Score = Tables<'score'>;
+export type Score = {
+    device_id: number;
+    score: number;
+};
 
 export type PixelData = Sprite['pixels'];
